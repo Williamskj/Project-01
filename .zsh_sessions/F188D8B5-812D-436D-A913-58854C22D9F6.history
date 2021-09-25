@@ -1,0 +1,163 @@
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew help
+ls -al ~/.ssh
+$ ssh-keygen -t ed25519 -C "tiana.hernandez31@gmail.com"
+$ ssh-keygen -t ed25519 -C tiana.hernandez31@gmail.com
+$ ssh-keygen -t rsa -b 4096 -C tiana.hernandez31@gmail.com
+$ ssh-keygen -t ed25519 -C "tiana.hernandez31@gmail.com"
+$ ssh-keygen -t rsa -b 4096 -C "tiana.hernandez31@gmail.com"
+xcode-select --install\
+
+ssh-keygen -t rsa -b 4096 -C tiana.hernandez31@gmail.com
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
+pbcopy < ~/.ssh/id_rsa.pub
+ls -al ~/.ssh
+ssh-keygen -t rsa -b 4096 -C tiana.hernandez31@gmail.com
+eval "$(ssh-agent -s)"
+ssh-add ~.ssh/id_rsa
+ssh-add -K ~/.ssh/id_rsa
+pbcopy < ~/.ssh/id_rsa.pub
+ssh -T git@github.com
+$ git config --global user.name "helen"
+git config
+$ git config --global user.name helen
+$ git config --global user.name "Helen"
+ls
+mkdir Example
+ls
+cd Example
+ls
+mkdir
+mkdir Example
+ls
+cd Example
+ls
+touch example.md
+ls
+Example pwd
+pwd
+Example pwd
+ls
+mkdir Example
+ls
+cd Example
+ls
+touch example.md
+ls
+pwd
+ls
+mv example.md test.md
+ls
+rm test.md
+ls
+history
+ls
+touch
+ls
+touch example.md
+ls
+code
+code .
+code
+ls
+ls -al ~./ssh
+ls -al ~/.ssh
+git config --global iser.name "Tiana"
+git config --global user.name "Tiana"
+git config user.name
+git config user.email "tiana.hernandez31@gmail.com"
+git config --global user.email "tiana.hernandez31@gmail.com"
+git config user.email
+ls -a
+code .gitconfig
+git clone
+git@github.com:tah899/prework-about-me.git
+git@github.com:tah899/prework-about-me.git
+git clone
+git clone git@github.com:tah899/prework-about-me.git
+ls
+cd prwork-about-me
+cd prework-about-me
+ls
+code .
+git status
+git add index.html
+git status
+git commit -m "updating pur h1 tag with our name"
+git status
+git push origin master
+git status
+git status
+git add index.html
+git status
+git commit -m "updating our details"
+git push origin master
+$("#btn1").on("click", function() {\
+  $("#box").animate({\
+    height: "+=35px",\
+    width: "+=35px"\
+  }, "fast");\
+});\
+\
+$("#btn2").on("click", function() {\
+  $("#box").animate().css({\
+    backgroundColor: "blue"\
+  }, 2500);\
+});\
+\
+$("#btn3").on("click", function() {\
+  $("#box").fadeOut();\
+});\
+\
+$("#btn4").on("click", function() {\
+  $("#box").fadeIn("fast").animate({\
+    height: "150px",\
+    width: "150px"\
+  }, "fast").css({\
+    backgroundColor: "pink"\
+  }, 1500);\
+});\
+#box {\
+  transition: background-color 2.5s ease-out\
+}\
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>\
+<p></p>\
+\
+<div id="box" style="height:150px; width:150px; background-color:pink; margin:25px;"></div>\
+\
+<button id="btn1">Grow</button>\
+<button id="btn2">Blue</button>\
+<button id="btn3">Fade</button>\
+<button id="btn4">Reset</button>
+git@github.com:tah899/prework-about-me.git
+https://github.com/tah899/prework-about-me.git
+mkdir
+mk dir first day
+mkdir First Day
+desktop pwd
+cd desktop
+mkdir First Day
+pwd
+ls
+touch index.html
+ls
+cd desktop
+mkdir First Day
+cd desktop
+mkdir first day
+mkdir first-day
+ls
+pwd
+cd
+cd first-day
+touch index.html
+.ssh/
+ssh-keygen -t
+ssh-keygen -t tiana.hernandez31@gmail.com
+ssh-keygen -t tiana.hernandez31@gmail.com -C
+.ssh/

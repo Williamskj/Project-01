@@ -1,0 +1,18 @@
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew help
+ls -al ~/.ssh
+$ ssh-keygen -t ed25519 -C "tiana.hernandez31@gmail.com"
+$ ssh-keygen -t ed25519 -C tiana.hernandez31@gmail.com
+$ ssh-keygen -t rsa -b 4096 -C tiana.hernandez31@gmail.com
+$ ssh-keygen -t ed25519 -C "tiana.hernandez31@gmail.com"
+$ ssh-keygen -t rsa -b 4096 -C "tiana.hernandez31@gmail.com"
+xcode-select --install\
+
+ssh-keygen -t rsa -b 4096 -C tiana.hernandez31@gmail.com
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
+pbcopy < ~/.ssh/id_rsa.pub
