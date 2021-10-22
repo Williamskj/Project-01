@@ -6,7 +6,7 @@ var submit = docuement.querySelector("submit")
 var pastSearchArray = []
 var weatherData = []
 var weather
-var flightData
+var flightData =[]
 var flightCarrierPrice 
 
 var localSearchHistory = JSON.parse(localStorage.getItem("history"))
