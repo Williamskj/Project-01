@@ -204,6 +204,7 @@ var localSearchHistory = JSON.parse(localStorage.getItem("history"))
 
 submit.on("click", function () {
 
+    console.log("Clicked")
 
     // pastSearchArray.push({ date: date.textContent })
     // pastSearchArray.push({ startLoc: startLoc.textContent })
