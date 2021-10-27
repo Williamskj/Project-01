@@ -10,8 +10,8 @@ let api = "67e5d9a31580eecf6ceba074d4645128";
 let fetchURL;
 
 // var date = document.querySelector("date")
-var startLoc = document.querySelector("start-loc")
-var endLoc = document.querySelector("end-loc")
+var startLoc = $("#start-loc")
+var endLoc = $("#end-loc")
 var submit = $("#submit")
 
 var pastSearchArray = []
@@ -204,6 +204,7 @@ var localSearchHistory = JSON.parse(localStorage.getItem("history"))
 
 submit.on("click", function () {
 
+    console.log("Clicked")
 
     // pastSearchArray.push({ date: date.textContent })
     // pastSearchArray.push({ startLoc: startLoc.textContent })
@@ -221,8 +222,10 @@ submit.on("click", function () {
 
     // localSearchHistory = JSON.stringify(localStorage.setItem("history", pastSearchArray))
     sampleDate =  $('#date').val();
-    fetchCity($('#startingCity').val(), sampleDate)
-    fetchCity($('#endingCity').val(), sampleDate)
+    fetchCity(startLoc.val(), sampleDate)
+    fetchCity($(endLoc.val(), sampleDate))
+    // fetchCity($('#startingCity').val(), sampleDate)
+    // fetchCity($('#endingCity').val(), sampleDate)
     startingCity()
 
 })
