@@ -21,6 +21,7 @@ var flightData
 var flightCarrierPrice
 
 let sampleDate
+// let flightAPIDate = ""
 
 var city1 = ''
 var city2 = ''
@@ -32,7 +33,7 @@ var flights = {
               }
 
 function startingCity() {
-    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/USD/en-US/?query=" + $('#startingCity').val(), {
+    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/USD/en-US/?query=" + startLoc.val(), {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
@@ -42,6 +43,7 @@ function startingCity() {
         .then(function (response) {
             return response.json()
         }).then(function (data1) {
+            console.log(data1)
             console.log('data1', data1.Places[0].CityId)
             city1 = data1.Places[0].CityId
             endingCity()
@@ -50,7 +52,7 @@ function startingCity() {
 }
 
 function endingCity() {
-    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/USD/en-US/?query=" + $('#endingCity').val(), {
+    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/USD/en-US/?query=" + endLoc.val(), {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
@@ -67,7 +69,7 @@ function endingCity() {
 }
 
 function quote() {
-    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/" + city1 + "/" + city2 + "/" + $('#date').val(), {
+    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/" + city1 + "/" + city2 + "/" + flightAPIDate, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
@@ -77,7 +79,7 @@ function quote() {
         .then(function (response) {
             return response.json()
         }).then(function (results) {
-            $('#api-container').empty()
+            //$('#api-container').empty()
             console.log(results.Places)
             for (let i = 0; i < results.Places.length; i++) {
                 if(results.Places[i].Type == "Station") {
@@ -182,6 +184,7 @@ function findWeatherAddLocalStorage() {
     }
     console.log(weather)
     pastSearchArray.push(weather)
+    weatherData = []
     console.log(pastSearchArray)
 }
 
@@ -222,8 +225,14 @@ submit.on("click", function () {
 
     // localSearchHistory = JSON.stringify(localStorage.setItem("history", pastSearchArray))
     sampleDate =  $('#date').val();
+    // let regexYear = /\d{4}/
+    // let regexMonth = /\d{1,2}-/
+    // let regexDay = /-\d{2}-/
+    flightAPIDate = dayjs(sampleDate).format("YYYY-MM-DD")
+
+    
     fetchCity(startLoc.val(), sampleDate)
-    fetchCity($(endLoc.val(), sampleDate))
+    fetchCity(endLoc.val(), sampleDate)
     // fetchCity($('#startingCity').val(), sampleDate)
     // fetchCity($('#endingCity').val(), sampleDate)
     startingCity()
