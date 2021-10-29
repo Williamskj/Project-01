@@ -19,7 +19,7 @@ var weatherData = []
 var weather
 var flightData
 var flightCarrierPrice
-
+var localSearchHistory = JSON.parse(localStorage.getItem("history"))
 let sampleDate
 // let flightAPIDate = ""
 
@@ -102,6 +102,8 @@ function quote() {
             var pastString = JSON.stringify(pastSearchArray)
             localSearchHistory = localStorage.setItem("history", pastString)
             //localStorage.setItem("history", JSON.stringify(flights))
+            console.log(localSearchHistory)
+        SearchResults()
 
         })
         .catch(err => {
@@ -168,8 +170,6 @@ function findWeatherAddLocalStorage() {
     console.log(pastSearchArray)
 }
 
-var localSearchHistory = JSON.parse(localStorage.getItem("history"))
-
 // // if a user comes to the page for the first time local storage is empty
 // // set the date, starting location, and ending location to empty strings 
 // if (localSearchHistory == null) {
@@ -221,12 +221,56 @@ submit.on("click", function () {
     // fetchCity($('#startingCity').val(), sampleDate)
     // fetchCity($('#endingCity').val(), sampleDate)
     startingCity()
-
-
+   
 
 })
 
+function SearchResults(){
+    localSearchHistory = JSON.parse(localStorage.getItem("history"))
+    var weather1 = document.createElement('li')
+    var weather2 = document.createElement("li")
+    var img1 = document.createElement("img")
+    var img2 = document.createElement("img")
+    var city1 = document.createElement("p")
+    var city2 = document.createElement("p")
+    
+        
+    
 
+    for (let i=0; i < localSearchHistory[2].quotes.length; i++){
+        var quotes = document.createElement("p")
+        quotes.textContent = "$" + localSearchHistory[2].quotes[i]
+        console.log(localSearchHistory[2].quotes[i])
+   }
+
+    city1.textContent= localSearchHistory[0].cityName
+    city2.textContent= localSearchHistory[1].cityName
+    weather1.textContent = localSearchHistory[0].weather
+    weather2.textContent = localSearchHistory[1].weather
+    img1.setAttribute("src", localSearchHistory[0].weatherIcon)
+    img2.setAttribute("src", localSearchHistory[1].weatherIcon)
+
+    document.querySelector("#output1").append(city1)
+    document.querySelector("#output1").append(img1)
+    document.querySelector("#output1").append(weather1)
+    document.querySelector("#output2").append(city2)
+    document.querySelector("#output2").append(img2)
+    document.querySelector("#output2").append(weather2)
+    
+    for (let i=0; i < localSearchHistory[2].carriers.length; i++){
+        var carriers = document.createElement("h2")
+        carriers.textContent = localSearchHistory[2].carriers[i]
+        document.querySelector("#flightInfo").append(carriers)
+        console.log(localSearchHistory[2].carriers[i])
+
+        var quotes = document.createElement("p")
+        quotes.textContent = "$" + localSearchHistory[2].quotes[i]
+        console.log(localSearchHistory[2].quotes[i])
+        document.querySelector("#flightInfo").append(quotes)
+
+    }
+    
+}
 
 
 
