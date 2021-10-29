@@ -189,8 +189,9 @@ submit.on("click", function () {
 
     console.log("Clicked")
 
+    var pastString2
     pastSearchArray = []
-    var pastString2 = JSON.stringify(pastSearchArray)
+    pastString2 = JSON.stringify(pastSearchArray)
     localSearchHistory = localStorage.setItem("history", pastString2)
 
     // pastSearchArray.push({ date: date.textContent })
