@@ -58,9 +58,8 @@ main section #input {
   font-size: 28px;
 }
 
-#results {
-  color: azure;
-  font-size: large;
+#resutls {
+  color:linen
 }
 
 #output1 {
@@ -71,7 +70,7 @@ main section #input {
   color: lightsteelblue
 }
 
-#flightinfo{
+#flightInfo{
   color:lightyellow
 }
 
