@@ -237,6 +237,43 @@ submit.on("click", function () {
     // fetchCity($('#endingCity').val(), sampleDate)
     startingCity()
 
+    var listItem = document.createElement('li')
+    var img = document.createElement("img")
+    var p1 = document.createElement("p")
+    
+    console.log(localSearchHistory[0].weather)
+    console.log(localSearchHistory[0].weatherIcon)
+
+
+    for (let i=0; i < localSearchHistory[2].carriers.length; i++){
+
+         console.log(localSearchHistory[2].carriers[i])
+    }
+
+    for (let i=0; i < localSearchHistory[2].quotes.length; i++){
+
+        console.log(localSearchHistory[2].quotes[i])
+   }
+
+
+
+
+    console.log(localSearchHistory[2].places[1])
+
+    // this will be city name for weather
+    //p1.textContent= localSearchHistory[0].WHATEVERKEVINGNAMED
+    listItem.textContent = localSearchHistory[0].weather
+    img.setAttribute("src", localSearchHistory[0].weatherIcon)
+
+    document.querySelector("#lsOutput").append(p1)
+    document.querySelector("#lsOutput").append(img)
+    document.querySelector("#lsOutput").append(listItem)
+    
+
+
+
+    
+
 })
 
 
