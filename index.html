@@ -29,13 +29,19 @@
                 <input  id="end-loc" type="text" placeholder="Final Destination" class="column">
               </p>
               <p>
-                  <button id=submit class="button is-danger mt-3">submit</button>             
+                  <button id="submit" class="button is-danger mt-3">submit</button>             
               </p>
-                <fieldset class="mt-5">
-                    <legend>Seach Results</legend>
-                    <div id="lsOutput"></div>
-                </fieldset>   
-            </div>
+            </div>  
+                <div class="mt-5" class="is-mobile">
+                    <h1 class="is-large is-primary">Seach Results</h1>
+                        <div class="columns">
+                            <div id="output1" class="column is-half"></div>
+                            <div id="output2" class="column is-half"></div>
+                        </div>
+                        <div id="flightInfo" class="is-success"></div>
+                        
+                </div>   
+            
           </section>
 
     <footer class="is-mobile">

@@ -58,6 +58,23 @@ main section #input {
   font-size: 28px;
 }
 
+#results {
+  color: azure;
+  font-size: large;
+}
+
+#output1 {
+  color: lightgreen
+}
+
+#output2 {
+  color: lightsteelblue
+}
+
+#flightinfo{
+  color:lightyellow
+}
+
   /* styling our footer */
 footer   {
   background: #222;

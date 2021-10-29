@@ -250,23 +250,23 @@ function SearchResults(){
     img1.setAttribute("src", localSearchHistory[0].weatherIcon)
     img2.setAttribute("src", localSearchHistory[1].weatherIcon)
 
-    document.querySelector("#lsOutput").append(city1)
-    document.querySelector("#lsOutput").append(img1)
-    document.querySelector("#lsOutput").append(weather1)
-    document.querySelector("#lsOutput").append(city2)
-    document.querySelector("#lsOutput").append(img2)
-    document.querySelector("#lsOutput").append(weather2)
+    document.querySelector("#output1").append(city1)
+    document.querySelector("#output1").append(img1)
+    document.querySelector("#output1").append(weather1)
+    document.querySelector("#output2").append(city2)
+    document.querySelector("#output2").append(img2)
+    document.querySelector("#output2").append(weather2)
     
     for (let i=0; i < localSearchHistory[2].carriers.length; i++){
-        var carriers = document.createElement("h1")
+        var carriers = document.createElement("h2")
         carriers.textContent = localSearchHistory[2].carriers[i]
-        document.querySelector("#lsOutput").append(carriers)
+        document.querySelector("#flightInfo").append(carriers)
         console.log(localSearchHistory[2].carriers[i])
 
         var quotes = document.createElement("p")
         quotes.textContent = "$" + localSearchHistory[2].quotes[i]
         console.log(localSearchHistory[2].quotes[i])
-        document.querySelector("#lsOutput").append(quotes)
+        document.querySelector("#flightInfo").append(quotes)
 
     }
     
