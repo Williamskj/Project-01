@@ -243,14 +243,14 @@ submit.on("click", function () {
 
 
 
-const btnSubmit = document.getElementById("submit");
-const lsOutPut = document.getElementById("lsOutput");
+// const btnSubmit = document.getElementById("submit");
+// const lsOutPut = document.getElementById("lsOutput");
 
-btnSubmit.onclick = function() {
-    for (let i=0; i < localStorage.length; i++)
+// btnSubmit.onclick = function() {
+//     for (let i=0; i < 5; i++)
 
-    lsOutPut.innerHTML += $(places, carriers, quotes) : $(weatherData, weatherDate);
-}
+//     lsOutPut.innerHTML += ${places, carriers, quotes} : ${weatherData, weatherDate};
+// } 
 
 
 
