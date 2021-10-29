@@ -27,10 +27,10 @@ var city1 = ''
 var city2 = ''
 
 var flights = {
-                places: [], 
-                carriers: [],
-                quotes: []
-              }
+    places: [],
+    carriers: [],
+    quotes: []
+}
 
 function startingCity() {
     fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/USD/en-US/?query=" + startLoc.val(), {
@@ -82,11 +82,11 @@ function quote() {
             //$('#api-container').empty()
             console.log(results.Places)
             for (let i = 0; i < results.Places.length; i++) {
-                if(results.Places[i].Type == "Station") {
+                if (results.Places[i].Type == "Station") {
                     flights.places.push(results.Places[i].Name)
                 }
                 console.log('Places', results.Places[i])
-               
+
             } for (let i = 0; i < results.Carriers.length; i++) {
                 console.log('Carriers', results.Carriers[i])
                 flights.carriers.push(results.Carriers[i].Name)
@@ -94,10 +94,10 @@ function quote() {
                 console.log('Quotes', results.Quotes[i])
                 flights.quotes.push(results.Quotes[i].MinPrice)
             }
-              console.log(flights.places)
-              console.log(flights.carriers)
-              console.log(flights.quotes)
-            
+            console.log(flights.places)
+            console.log(flights.carriers)
+            console.log(flights.quotes)
+
             pastSearchArray.push(flights)
             var pastString = JSON.stringify(pastSearchArray)
             localSearchHistory = localStorage.setItem("history", pastString)
@@ -107,7 +107,7 @@ function quote() {
         .catch(err => {
             console.error(err);
         });
-        
+
 }
 
 //prep the fetch url for different cities
@@ -134,19 +134,16 @@ function fetchFunc(x, theDate) {
 
                     //pick specific data from fetch
                     let forecastDataObj = new Object();
+                    forecastDataObj.cityName = data.city.name;
                     forecastDataObj.date = data.list[index].dt;
                     forecastDataObj.weather = data.list[index].weather[0].description
                     forecastDataObj.weatherIcon = data.list[index].weather[0].icon
                     weatherData.push(forecastDataObj);
                 }
-                //console.log(weatherData);
                 for (let index = 0; index < weatherData.length; index++) {
                     weatherData[index].date = convertedDate = (dayjs.unix(weatherData[index].date)).format("MMM DD, YYYY");
                     weatherData[index].weatherIcon = "http://openweathermap.org/img/wn/" + weatherData[index].weatherIcon + "@2x.png"
                 }
-                console.log(weatherData)
-                findDate(theDate)
-
                 findWeatherAddLocalStorage()
             }
 
@@ -154,35 +151,18 @@ function fetchFunc(x, theDate) {
 
 };
 
-//finds the info for date that is input 
-function findDate(x) {
-
-    let weatherDate = dayjs(x).format("MMM DD, YYYY");
-    var indexValue = weatherData.find(function (post, index) {
-        if (post.date == weatherDate)
-            return true;
-    });
-    console.log(indexValue);
-}
-
 /*
 find the weather object with same date the user input in the text field and 
 return the weather object with the matching date
-*/  
+*/
 function findWeatherAddLocalStorage() {
-    
-    console.log(weatherData)
-    
     for (var i = 0; i < weatherData.length; i++) {
-        console.log(weatherData[i])
-        console.log(weatherData[i].date)
-        console.log(sampleDate)
+
         if (weatherData[i].date == dayjs(sampleDate).format("MMM DD, YYYY")) {
-            
+            console.log(weatherData[i])
             weather = weatherData[i]
         }
     }
-    console.log(weather)
     pastSearchArray.push(weather)
     weatherData = []
     console.log(pastSearchArray)
@@ -209,6 +189,11 @@ submit.on("click", function () {
 
     console.log("Clicked")
 
+    var pastString2
+    pastSearchArray = []
+    pastString2 = JSON.stringify(pastSearchArray)
+    localSearchHistory = localStorage.setItem("history", pastString2)
+
     // pastSearchArray.push({ date: date.textContent })
     // pastSearchArray.push({ startLoc: startLoc.textContent })
     // pastSearchArray.push({ endLoc: endLoc.textContent })
@@ -220,17 +205,17 @@ submit.on("click", function () {
     //startingCity() 
 
     //do something with the flight data
-    
+
     // pastSearchArray.push(flightCarrierPrice)
 
     // localSearchHistory = JSON.stringify(localStorage.setItem("history", pastSearchArray))
-    sampleDate =  $('#date').val();
+    sampleDate = $('#date').val();
     // let regexYear = /\d{4}/
     // let regexMonth = /\d{1,2}-/
     // let regexDay = /-\d{2}-/
     flightAPIDate = dayjs(sampleDate).format("YYYY-MM-DD")
 
-    
+
     fetchCity(startLoc.val(), sampleDate)
     fetchCity(endLoc.val(), sampleDate)
     // fetchCity($('#startingCity').val(), sampleDate)
