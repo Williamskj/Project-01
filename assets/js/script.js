@@ -189,6 +189,11 @@ submit.on("click", function () {
 
     console.log("Clicked")
 
+    var pastString2
+    pastSearchArray = []
+    pastString2 = JSON.stringify(pastSearchArray)
+    localSearchHistory = localStorage.setItem("history", pastString2)
+
     // pastSearchArray.push({ date: date.textContent })
     // pastSearchArray.push({ startLoc: startLoc.textContent })
     // pastSearchArray.push({ endLoc: endLoc.textContent })
@@ -216,6 +221,8 @@ submit.on("click", function () {
     // fetchCity($('#startingCity').val(), sampleDate)
     // fetchCity($('#endingCity').val(), sampleDate)
     startingCity()
+
+
 
 })
 
