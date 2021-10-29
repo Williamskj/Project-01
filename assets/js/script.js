@@ -233,17 +233,13 @@ function SearchResults(){
     var img2 = document.createElement("img")
     var city1 = document.createElement("p")
     var city2 = document.createElement("p")
-    var carriers = document.createElement("h1")
-    var quotes = document.createElement("p")
+    
         
     
-    for (let i=0; i < localSearchHistory[2].carriers.length; i++){
-        carriers.textContent = localSearchHistory[2].carriers
-        console.log(localSearchHistory[2].carriers[i])
-    }
 
     for (let i=0; i < localSearchHistory[2].quotes.length; i++){
-        quotes.textContent = localSearchHistory[2].quotes
+        var quotes = document.createElement("p")
+        quotes.textContent = "$" + localSearchHistory[2].quotes[i]
         console.log(localSearchHistory[2].quotes[i])
    }
 
@@ -255,13 +251,25 @@ function SearchResults(){
     img2.setAttribute("src", localSearchHistory[1].weatherIcon)
 
     document.querySelector("#lsOutput").append(city1)
-    document.querySelector("#lsOutput").append(city2)
     document.querySelector("#lsOutput").append(img1)
-    document.querySelector("#lsOutput").append(img2)
     document.querySelector("#lsOutput").append(weather1)
+    document.querySelector("#lsOutput").append(city2)
+    document.querySelector("#lsOutput").append(img2)
     document.querySelector("#lsOutput").append(weather2)
-    document.querySelector("#lsOutput").append(carriers)
-    document.querySelector("#lsOutput").append(quotes)
+    
+    for (let i=0; i < localSearchHistory[2].carriers.length; i++){
+        var carriers = document.createElement("h1")
+        carriers.textContent = localSearchHistory[2].carriers[i]
+        document.querySelector("#lsOutput").append(carriers)
+        console.log(localSearchHistory[2].carriers[i])
+
+        var quotes = document.createElement("p")
+        quotes.textContent = "$" + localSearchHistory[2].quotes[i]
+        console.log(localSearchHistory[2].quotes[i])
+        document.querySelector("#lsOutput").append(quotes)
+
+    }
+    
 }
 
 
