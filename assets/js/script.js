@@ -243,6 +243,15 @@ submit.on("click", function () {
 
 
 
+const btnSubmit = document.getElementById("submit");
+const lsOutPut = document.getElementById("lsOutput");
+
+btnSubmit.onclick = function() {
+    for (let i=0; i < localStorage.length; i++)
+
+    lsOutPut.innerHTML += $(places, carriers, quotes) : $(weatherData, weatherDate);
+}
+
 
 
 
