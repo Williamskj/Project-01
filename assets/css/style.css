@@ -58,6 +58,10 @@ main section #input {
   font-size: 28px;
 }
 
+#date {
+  background-color: lightgrey;
+}
+
 #resutls {
   color:linen
 }
