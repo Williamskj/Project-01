@@ -240,7 +240,8 @@ function SearchResults(){
     
     for (let i=0; i < localSearchHistory[2].quotes.length; i++){
         var quotes = document.createElement("p")
-        quotes.textContent = "$" + localSearchHistory[2].quotes[i]}
+        quotes.textContent = "$" + localSearchHistory[2].quotes[i]
+    }
 
     city1.textContent= localSearchHistory[0].cityName
     city2.textContent= localSearchHistory[1].cityName
@@ -263,7 +264,8 @@ function SearchResults(){
 
         var quotes = document.createElement("p")
         quotes.textContent = "$" + localSearchHistory[2].quotes[i]
-        document.querySelector("#flightInfo").append(quotes)}
+        document.querySelector("#flightInfo").append(quotes)
+    }
     
 }
 
