@@ -32,6 +32,10 @@ var flights = {
     quotes: []
 }
 
+$( function() {
+    $( "#date" ).datepicker();
+})
+
 function startingCity() {
     fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/USD/en-US/?query=" + startLoc.val(), {
         "method": "GET",
