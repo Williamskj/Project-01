@@ -238,14 +238,10 @@ function SearchResults(){
     var city1 = document.createElement("p")
     var city2 = document.createElement("p")
     
-        
-    
-
     for (let i=0; i < localSearchHistory[2].quotes.length; i++){
         var quotes = document.createElement("p")
         quotes.textContent = "$" + localSearchHistory[2].quotes[i]
-        console.log(localSearchHistory[2].quotes[i])
-   }
+    }
 
     city1.textContent= localSearchHistory[0].cityName
     city2.textContent= localSearchHistory[1].cityName
@@ -265,13 +261,10 @@ function SearchResults(){
         var carriers = document.createElement("h2")
         carriers.textContent = localSearchHistory[2].carriers[i]
         document.querySelector("#flightInfo").append(carriers)
-        console.log(localSearchHistory[2].carriers[i])
 
         var quotes = document.createElement("p")
         quotes.textContent = "$" + localSearchHistory[2].quotes[i]
-        console.log(localSearchHistory[2].quotes[i])
         document.querySelector("#flightInfo").append(quotes)
-
     }
     
 }
