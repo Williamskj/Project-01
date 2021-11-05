@@ -12,6 +12,13 @@ then call 2 third-party APIs, a weather API and a flights API, to return some in
 - Keyann Williams: Flights API calls
 - Jordan Nolan: Integration, formatting data from API calls and putting in Local Storage 
 
+## Technologies Used:
+- Bulma
+- OpenWeather API
+- Skyscanner API
+- JQuery
+- DayJS
+
 ## Link to App
 https://williamskj.github.io/Project-01/
 
