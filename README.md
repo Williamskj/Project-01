@@ -1,4 +1,4 @@
-# Project-01
+# Last-Minute-Flights-and-Forecasts
 Contributions From: Tiana Hernandez, Kevin Ang, Nikko Ganacias, Keyann Williams, Jordan Nolan 
 
 ## Description
